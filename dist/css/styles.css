@@ -1,0 +1,71 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #0c0007;
+  color: #dadada;
+
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 1rem;
+}
+
+.container-imagem {
+  min-height: 450px;
+
+  background-color: #d8d7d7;
+  /* border-radius: 20px; */
+}
+
+.container-imagem>.imagem-forca {}
+
+.grid-palavra {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  place-items: center;
+  gap: 5px;
+}
+
+.grid-palavra>p {
+  padding: 8px 15px;
+
+  border: 2px solid #00ff3c;
+  border-radius: 10px;
+
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.grid-teclado {
+  display: grid;
+  grid-template-columns: repeat(10, 35px);
+  gap: 2.2px;
+}
+
+.grid-teclado>button {
+  height: 35px;
+
+  border-radius: 5px;
+  border: none;
+}
+
+.grid-teclado>button:hover {
+  background-color: transparent;
+  color: #00ff3c;
+
+  font-weight: 800;
+}
+
+.btn-enter {
+  grid-column: 3 span;
+}
