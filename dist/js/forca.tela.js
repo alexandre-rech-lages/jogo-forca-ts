@@ -35,6 +35,7 @@ export class ForcaTela {
         this.atualizarForca();
         this.labelMensagemFinal.textContent = "";
         //(this.panelBotoes as HTMLDivElement).disabled = false;
+        this.panelBotoes.classList.add("disabled");
         for (let botao of this.panelBotoes.children) {
             botao.disabled = false;
         }

@@ -69,3 +69,11 @@ body {
 .btn-enter {
   grid-column: 3 span;
 }
+
+.disabled {
+  pointer-events: none;
+  /* Impede que eventos passem pela div */
+  opacity: 0.5;
+  /* Torna o conteúdo menos visível */
+  /* Outros estilos que você queira aplicar */
+}

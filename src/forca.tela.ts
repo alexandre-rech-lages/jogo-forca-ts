@@ -63,6 +63,7 @@ export class ForcaTela {
     this.labelMensagemFinal.textContent = "";
 
     //(this.panelBotoes as HTMLDivElement).disabled = false;
+    this.panelBotoes.classList.add("disabled");
 
     for (let botao of this.panelBotoes.children) {
       (botao as HTMLButtonElement).disabled = false;
