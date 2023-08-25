@@ -7,7 +7,8 @@ export class ForcaTela {
   labelDica: HTMLLabelElement;
   imagemForca: HTMLImageElement;
   labelMensagemFinal: HTMLLabelElement;
-  jogoDaForca: Forca; // Adicione o tipo Forca para a variável jogoDaForca
+  jogoDaForca: Forca;
+  divMensagemFinal : HTMLDivElement;
 
   constructor() {
     this.panelBotoes = document.getElementById("panelBotoes") as HTMLDivElement;
@@ -16,6 +17,7 @@ export class ForcaTela {
     this.labelDica = document.getElementById("labelDica") as HTMLLabelElement;
     this.imagemForca = document.getElementById("imagemForca") as HTMLImageElement;
     this.labelMensagemFinal = document.getElementById("labelMensagemFinal") as HTMLLabelElement;
+    this.divMensagemFinal = document.getElementById("divMensagemFinal") as HTMLDivElement; 
 
     this.registrarEventos();
 
@@ -24,6 +26,8 @@ export class ForcaTela {
     this.obterPalavraParcial();
 
     this.obterDicaPalavra();
+
+    this.divMensagemFinal.classList.add("display-none"); 
   }
 
   registrarEventos() {
@@ -60,10 +64,12 @@ export class ForcaTela {
 
     this.atualizarForca();
 
-    this.labelMensagemFinal.textContent = "";
+    this.labelMensagemFinal.textContent = "";   
 
     //(this.panelBotoes as HTMLDivElement).disabled = false;
-    this.panelBotoes.classList.add("disabled");
+    this.panelBotoes.classList.remove("disabled");
+
+    this.divMensagemFinal.classList.add("display-none"); 
 
     for (let botao of this.panelBotoes.children) {
       (botao as HTMLButtonElement).disabled = false;
@@ -91,6 +97,7 @@ export class ForcaTela {
       (botao as HTMLButtonElement).disabled = true;
     }
 
+    this.divMensagemFinal.classList.remove("display-none"); 
     this.labelMensagemFinal.textContent = this.jogoDaForca.mensagemFinal;
   }
 

@@ -7,10 +7,12 @@ export class ForcaTela {
         this.labelDica = document.getElementById("labelDica");
         this.imagemForca = document.getElementById("imagemForca");
         this.labelMensagemFinal = document.getElementById("labelMensagemFinal");
+        this.divMensagemFinal = document.getElementById("divMensagemFinal");
         this.registrarEventos();
         this.jogoDaForca = new Forca();
         this.obterPalavraParcial();
         this.obterDicaPalavra();
+        this.divMensagemFinal.classList.add("display-none");
     }
     registrarEventos() {
         for (let botao of this.panelBotoes.children) {
@@ -35,7 +37,8 @@ export class ForcaTela {
         this.atualizarForca();
         this.labelMensagemFinal.textContent = "";
         //(this.panelBotoes as HTMLDivElement).disabled = false;
-        this.panelBotoes.classList.add("disabled");
+        this.panelBotoes.classList.remove("disabled");
+        this.divMensagemFinal.classList.add("display-none");
         for (let botao of this.panelBotoes.children) {
             botao.disabled = false;
         }
@@ -56,6 +59,7 @@ export class ForcaTela {
         for (let botao of this.panelBotoes.children) {
             botao.disabled = true;
         }
+        this.divMensagemFinal.classList.remove("display-none");
         this.labelMensagemFinal.textContent = this.jogoDaForca.mensagemFinal;
     }
     atualizarForca() {
